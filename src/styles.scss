@@ -1,0 +1,10 @@
+@import "bootstrap/scss/bootstrap";
+@import '@angular/cdk/text-field-prebuilt.css';
+
+.text:focus{
+  outline: none;
+}
+
+body {
+  overflow: hidden;
+}
