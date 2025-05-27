@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
-import { ChatComponent } from './chat/chat.component';
+import { ChatGridComponent } from './chat-interface/chat-grid/chat-grid.component';
 import { SharedModule } from '../shared/shared.module';
 import {CommonModule} from '@angular/common';
 
 @NgModule({
   declarations: [
-    ChatComponent
+    ChatGridComponent
   ],
   imports: [
     CommonModule,
@@ -13,7 +13,7 @@ import {CommonModule} from '@angular/common';
   ],
   providers: [],
   bootstrap: [
-    ChatComponent
+    ChatGridComponent
   ]
 })
 export class InterfaceModule {}
