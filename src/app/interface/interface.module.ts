@@ -5,15 +5,13 @@ import {CommonModule} from '@angular/common';
 
 @NgModule({
   declarations: [
-    ChatGridComponent
   ],
   imports: [
     CommonModule,
-    SharedModule
+    SharedModule,
+    ChatGridComponent
   ],
   providers: [],
-  bootstrap: [
-    ChatGridComponent
-  ]
+  bootstrap: []
 })
 export class InterfaceModule {}
