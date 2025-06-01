@@ -1,0 +1,22 @@
+.user-bubble, .bot-bubble {
+  color: #222;
+  padding: 0.5em 1em;
+  margin: 0.5em 0;
+  max-width: 75%;
+  width: fit-content;
+  border-radius: 1.2em;
+  word-break: break-word;
+}
+
+.bot-bubble {
+  background: #e3f2fd;
+  align-self: flex-start;
+  width: fit-content;
+}
+
+.user-bubble {
+  background: #d1eafc;
+  margin-left: auto;
+  align-self: flex-end;
+  text-align: left;
+}

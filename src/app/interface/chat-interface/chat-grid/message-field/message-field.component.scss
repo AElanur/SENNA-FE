@@ -1,0 +1,41 @@
+.message-button {
+  border: none;
+  background-color: #FDD6E5;
+  border-radius: 50%;
+  width: 2.5rem;
+  height: 2.5rem;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: auto;
+}
+
+.send-icon {
+  width: 1rem;
+  height: 1rem;
+  color: white;
+}
+
+.message-textarea {
+  background: transparent;
+  border: none;
+  outline: none;
+  resize: none;
+  min-height: 2.2rem;
+  max-height: 8rem;
+  width: 100%;
+  font-size: 1rem;
+  line-height: 1.5;
+  box-shadow: none;
+  padding-top: 0.2rem;
+  padding-bottom: 0.2rem;
+}
+
+textarea[cdktextareaautosize] {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE 10+ */
+  overflow-y: hidden !important;
+  resize: none !important;
+}
+
