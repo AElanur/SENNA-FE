@@ -1,0 +1,19 @@
+.chat-field {
+  display: flex;
+  flex-direction: column;
+  background: transparent;
+  border-radius: 2rem;
+  height: 100vh;
+}
+
+.message-list {
+  flex: 1 1 0%;
+  overflow-y: auto;
+  min-height: 0;
+  max-height: calc(100vh - 130px);
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.message-list::-webkit-scrollbar {
+  display: none;
+}
