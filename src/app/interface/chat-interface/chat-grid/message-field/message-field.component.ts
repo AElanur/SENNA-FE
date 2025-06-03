@@ -22,8 +22,6 @@ export class MessageFieldComponent {
     }
 
     this.messageService.sendMessage({
-      sender: 'Ahsen',
-      recipient: 'Bot',
       content: message
     }).subscribe({
       next: (response) => {
