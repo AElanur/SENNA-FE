@@ -1,7 +1,8 @@
 import { Routes } from '@angular/router';
-import { ChatGridComponent } from './interface/chat-interface/chat-grid/chat-grid.component';
+import { InterfaceComponent} from './interface/interface.component';
+
 export const routeConfig: Routes = [
-  { path: '', component: ChatGridComponent },
+  { path: ':userID', component: InterfaceComponent },
 ];
 
 export default routeConfig;

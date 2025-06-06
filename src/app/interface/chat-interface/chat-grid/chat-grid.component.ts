@@ -4,7 +4,7 @@ import { BotProfileFieldComponent} from './bot-profile-field/bot-profile-field.c
 
 
 @Component({
-  selector: 'chat-component',
+  selector: 'app-chat-grid',
   templateUrl: './chat-grid.component.html',
   styleUrls: ['./chat-grid.component.scss'],
   imports: [

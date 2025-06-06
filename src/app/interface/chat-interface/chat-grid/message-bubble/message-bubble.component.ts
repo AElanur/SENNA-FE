@@ -14,6 +14,6 @@ export class MessageBubbleComponent {
   @Input() message!: Message;
 
   get isBot(): boolean {
-    return this.message.sender === 'Bot';
+    return this.message.sender_type === 'bot';
   }
 }

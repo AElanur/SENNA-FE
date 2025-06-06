@@ -10,12 +10,12 @@ export class MessageRepository {
 
   constructor(private http: HttpClient) {}
 
-  sendMessage(message: Message): Observable<Message> {
-    return this.http.post<Message>(`${this.apiUrl}/send-message`, message);
+  sendMessage(chatId: number, message: Message): Observable<any> {
+    return this.http.post<Message>(`${this.apiUrl}/chats/${chatId}/send-message`, message);
   }
 
   getMessages(chatId: number): Observable<Message[]> {
-    return this.http.get<Message[]>(`${this.apiUrl}/get-messages/${chatId}`)
+    return this.http.get<Message[]>(`${this.apiUrl}/chats/${chatId}/get-messages`)
   }
 
 }

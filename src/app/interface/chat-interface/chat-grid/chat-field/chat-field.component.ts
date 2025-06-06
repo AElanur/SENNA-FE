@@ -26,12 +26,15 @@ export class ChatFieldComponent implements OnInit {
     this.messageService.getMessages(chat_id).subscribe({
       next: (messages: Message[]) => {
         this.messages = messages;
-        console.log(this.messages)
       },
       error: (err) => {
         this.messages = [];
         console.error('Error fetching messages:', err);
       }
     });
+  }
+
+  onMessageSent(): void {
+    this.getMessages(1);
   }
 }
