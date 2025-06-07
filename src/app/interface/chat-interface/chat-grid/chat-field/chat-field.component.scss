@@ -1,19 +1,32 @@
 .chat-field {
   display: flex;
   flex-direction: column;
-  background: transparent;
-  border-radius: 2rem;
-  height: 100vh;
+  flex: 1 1 auto;
+  height: 100%;
+}
+.message-field {
+  flex: 0 0 5%;
+  align-content: end;
+  justify-content: end;
+  place-content: end;
 }
 
-.message-list {
-  flex: 1 1 0%;
-  overflow-y: auto;
-  min-height: 0;
-  max-height: calc(100vh - 180px);
-  scrollbar-width: none;
-  -ms-overflow-style: none;
-}
 .message-list::-webkit-scrollbar {
   display: none;
+}
+
+.messages {
+  min-height: 0;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  overflow-y: auto;
+  height: 100%;
+  max-height: 95%;
+  flex: 0 0 95%;
+}
+
+.profile-field {
+  flex: 0 0 5%;
+  max-height: 10%;
+  flex: 0 0 95%;
 }

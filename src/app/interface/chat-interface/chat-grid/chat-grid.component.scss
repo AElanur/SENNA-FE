@@ -1,7 +1,30 @@
 .chat-grid {
-  background: #f8fafc;
-  height: 100%;
+  background: #10192a;
   width: 100%;
   overflow: hidden;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  height: 100%;
+  padding: 1rem;
+}
+
+.profile-field {
+  flex: 0 0 5%;
+  max-height: 5%;
+}
+
+.chat-field {
+  flex: 0 0 95%;
+  max-height: 95%;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.chat-view {
   border-radius: 0.3rem;
+  overflow: hidden;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
 }

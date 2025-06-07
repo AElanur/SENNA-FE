@@ -6,17 +6,30 @@
   width: fit-content;
   border-radius: 1.2em;
   word-break: break-word;
+  font-size: 15px;
+}
+
+.bot-time, .user-time {
+  font-size: 12px;
 }
 
 .bot-bubble {
-  background: #e3f2fd;
+  background: #B9C2DB  ;
   align-self: flex-start;
   width: fit-content;
 }
 
 .user-bubble {
-  background: #d1eafc;
+  background: #D3DBED;
   margin-left: auto;
   align-self: flex-end;
   text-align: left;
 }
+
+.user-time {
+  margin-left: auto;
+  align-self: flex-end;
+  text-align: left;
+}
+
+

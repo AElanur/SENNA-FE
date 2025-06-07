@@ -1,14 +1,14 @@
 .message-button {
   border: none;
-  background-color: #551A8B;
-  border-radius: 50%;
+  background-color: #10192a;
+  border-radius: 100%;
   width: 2.5rem;
   height: 2.5rem;
-  padding: 0;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-left: auto;
+  align-self: center;
+  margin: auto;
 }
 
 .send-icon {
@@ -37,5 +37,10 @@ textarea[cdktextareaautosize] {
   -ms-overflow-style: none; /* IE 10+ */
   overflow-y: hidden !important;
   resize: none !important;
+}
+
+.message-box {
+  height: 100%;
+  background-color: #D3DBED;
 }
 

@@ -1,11 +1,12 @@
 import { Component, Input } from '@angular/core';
 import { Message } from '../../../../message/message.model';
-import {NgClass} from '@angular/common';
+import {DatePipe, NgClass} from '@angular/common';
 
 @Component({
   selector: 'app-message-bubble',
   imports: [
-    NgClass
+    NgClass,
+    DatePipe
   ],
   templateUrl: './message-bubble.component.html',
   styleUrl: './message-bubble.component.scss'

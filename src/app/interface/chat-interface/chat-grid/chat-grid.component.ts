@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { ChatFieldComponent } from './chat-field/chat-field.component';
-import { BotProfileFieldComponent} from './bot-profile-field/bot-profile-field.component';
+import { BotProfileFieldComponent } from './bot-profile-field/bot-profile-field.component';
 
 
 @Component({

@@ -1,4 +1,4 @@
-import {afterRender, Component, OnInit} from '@angular/core';
+import {AfterViewChecked, Component, ElementRef, OnInit, ViewChild} from '@angular/core';
 import { MessageFieldComponent } from '../message-field/message-field.component';
 import { MessageBubbleComponent } from '../message-bubble/message-bubble.component';
 import { MessageService} from '../../../../message/message.service';
@@ -14,12 +14,23 @@ import { Message } from '../../../../message/message.model';
   templateUrl: './chat-field.component.html',
   styleUrl: './chat-field.component.scss',
 })
-export class ChatFieldComponent implements OnInit {
+export class ChatFieldComponent implements OnInit, AfterViewChecked {
+  @ViewChild('messageList') private messageList!: ElementRef;
   messages: Message[] | null = null;
   constructor(private messageService: MessageService) {}
 
   ngOnInit() {
     this.getMessages(1)
+  }
+
+  ngAfterViewChecked() {
+    this.scrollToBottom();
+  }
+
+  private scrollToBottom(): void {
+    try {
+      this.messageList.nativeElement.scrollTop = this.messageList.nativeElement.scrollHeight;
+    } catch (err) {}
   }
 
   getMessages(chat_id: number): void {
