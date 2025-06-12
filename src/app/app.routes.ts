@@ -1,7 +1,12 @@
 import { Routes } from '@angular/router';
-import { ChatGridComponent } from './interface/chat-interface/chat-grid/chat-grid.component';
+import { InterfaceComponent} from './interface/interface.component';
+import {LoginComponent} from './interface/user/login/login.component';
+import {CreateUserProfileComponent} from './interface/user/create-user-profile/create-user-profile.component';
+import {CreateBotComponent} from './interface/user/create-bot/create-bot.component';
+
 export const routeConfig: Routes = [
-  { path: '', component: ChatGridComponent },
+  { path: 'login', component: CreateBotComponent },
+  { path: ':userID', component: InterfaceComponent },
 ];
 
 export default routeConfig;

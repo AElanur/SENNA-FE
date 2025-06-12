@@ -1,7 +1,8 @@
 export interface Message {
-  id?: number;            // Optional if not set when sending
-  sender?: string;
-  recipient?: string;
+  id?: number;
+  chat_id?: number;
+  user_id?: number;
   content: string;
-  timestamp?: string;     // Optional if set by backend
+  timestamp?: string;
+  sender_type?: string;
 }

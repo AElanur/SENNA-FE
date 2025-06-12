@@ -4,6 +4,15 @@
   color: white;
 }
 
+.profile-icon {
+  width: 36px;
+  height: 36px;
+  overflow: hidden;
+  border: #F4F6FB 1px solid;
+  background: #fff;
+  border-radius: 50%;
+}
+
 .action-button {
   background-color: transparent;
   border: none;
@@ -14,3 +23,9 @@
   align-items: center;
   justify-content: center;
 }
+
+.top-bar {
+  flex: 0 0 56px;
+  background: #0d1420;
+}
+

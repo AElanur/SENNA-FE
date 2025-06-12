@@ -1,5 +1,10 @@
-<div
-  [ngClass]="{'bot-bubble': isBot, 'user-bubble': !isBot}"
-  class="p-2 px-3">
-  {{ message.content }}
+<div class="d-flex flex-column">
+  <div
+    [ngClass]="{'bot-bubble': isBot, 'user-bubble': !isBot}"
+    class="p-2 px-3">
+    {{ message.content }}
+  </div>
+  <div [ngClass]="{'bot-time': isBot, 'user-time': !isBot}">
+    {{ message.timestamp | date:'shortTime' }}
+  </div>
 </div>

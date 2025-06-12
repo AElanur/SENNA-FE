@@ -7,8 +7,8 @@ import {Observable, of} from 'rxjs';
 export class MessageService {
   constructor(private messageRepo: MessageRepository) {}
 
-  sendMessage(message: Message): Observable<Message> {
-    return this.messageRepo.sendMessage(message);
+  sendMessage(chatID: number, message: Message): Observable<any> {
+    return this.messageRepo.sendMessage(chatID, message);
   }
 
   getMessages(chatId: number): Observable<Message[]> {

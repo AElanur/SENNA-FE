@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
 import { ChatFieldComponent } from './chat-field/chat-field.component';
-import { BotProfileFieldComponent} from './bot-profile-field/bot-profile-field.component';
+import { BotProfileFieldComponent } from './bot-profile-field/bot-profile-field.component';
 
 
 @Component({
-  selector: 'chat-component',
+  selector: 'app-chat-grid',
   templateUrl: './chat-grid.component.html',
   styleUrls: ['./chat-grid.component.scss'],
   imports: [
