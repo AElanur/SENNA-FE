@@ -1,9 +1,8 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 import {FormBuilder, FormGroup, ReactiveFormsModule, Validators} from '@angular/forms';
-import {UserService} from '../../../user/user.service';
+import {UserService} from '../../../services/user.service';
 import {NgIf} from '@angular/common';
-import {ActivatedRoute, Router} from '@angular/router';
-
+import {Router} from '@angular/router';
 
 
 @Component({
@@ -44,8 +43,7 @@ export class CreateUserProfileComponent {
       const userData = { username, email, password };
       this.userService.createUser(userData).subscribe({
         next: (response) => {
-          const userId = response;
-          this.route.navigate(['/user', userId]);
+          this.route.navigate(['/user', response, 'bot']);
         },
         error: (err) => {
           console.log(err)

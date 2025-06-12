@@ -1,5 +1,5 @@
 import {Component, Input} from '@angular/core';
-import {Trait} from '../../../trait/trait.model';
+import {Trait} from '../../../models/trait.model';
 
 @Component({
   selector: 'app-trait',

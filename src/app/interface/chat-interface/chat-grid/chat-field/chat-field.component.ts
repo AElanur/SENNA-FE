@@ -1,8 +1,8 @@
 import {AfterViewChecked, Component, ElementRef, OnInit, ViewChild} from '@angular/core';
 import { MessageFieldComponent } from '../message-field/message-field.component';
 import { MessageBubbleComponent } from '../message-bubble/message-bubble.component';
-import { MessageService} from '../../../../message/message.service';
-import { Message } from '../../../../message/message.model';
+import { MessageService} from '../../../../services/message.service';
+import { Message } from '../../../../models/message.model';
 import {ActivatedRoute} from '@angular/router';
 
 @Component({
@@ -23,8 +23,8 @@ export class ChatFieldComponent implements OnInit, AfterViewChecked {
     private route: ActivatedRoute) {}
 
   ngOnInit() {
-    const userId = Number(this.route.snapshot.paramMap.get('userID'));
-    this.getMessages(userId)
+    const chatId = Number(this.route.snapshot.paramMap.get('chatID'));
+    this.getMessages(chatId)
   }
 
   ngAfterViewChecked() {
@@ -50,6 +50,7 @@ export class ChatFieldComponent implements OnInit, AfterViewChecked {
   }
 
   onMessageSent(): void {
-    this.getMessages(1);
+    const chatId = Number(this.route.snapshot.paramMap.get('chatID'));
+    this.getMessages(chatId);
   }
 }

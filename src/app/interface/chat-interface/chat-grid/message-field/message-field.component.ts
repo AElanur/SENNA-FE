@@ -1,6 +1,6 @@
 import { Component, Output, EventEmitter } from '@angular/core';
 import { TextFieldModule } from '@angular/cdk/text-field';
-import { MessageService} from '../../../../message/message.service';
+import { MessageService} from '../../../../services/message.service';
 import { FormsModule } from '@angular/forms';
 import {ActivatedRoute} from '@angular/router';
 
@@ -16,7 +16,6 @@ import {ActivatedRoute} from '@angular/router';
 export class MessageFieldComponent {
   response: any = '';
   messageContent: string = '';
-  chatId = 1
   sending: boolean = false;
 
   constructor(
@@ -35,13 +34,13 @@ export class MessageFieldComponent {
 
   sendMessage(message: string): void {
     const userId = Number(this.route.snapshot.paramMap.get('userID'));
+    const chatId = Number(this.route.snapshot.paramMap.get('chatID'));
     if (!this.messageContent.trim()) {
       return;
     }
     this.sending = true;
-    this.messageService.sendMessage(
-      this.chatId, {
-      chat_id: 1,
+    this.messageService.sendMessage({
+      chat_id: chatId,
       user_id: userId,
       content: message,
       sender_type: "user"

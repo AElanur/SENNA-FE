@@ -5,10 +5,6 @@
       <label for="botName">Bot Name</label>
       <input id="botName" type="text" formControlName="botName" required />
     </div>
-    <div class="form-group">
-      <label for="botDescription">Description</label>
-      <textarea id="botDescription" formControlName="botDescription" rows="3" placeholder="What is this bot like?"></textarea>
-    </div>
     <button type="submit" class="bot-button" [disabled]="botForm.invalid">Create Bot</button>
   </form>
 </div>

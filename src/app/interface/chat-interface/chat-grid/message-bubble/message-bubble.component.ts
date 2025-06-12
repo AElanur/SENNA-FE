@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { Message } from '../../../../message/message.model';
+import { Message } from '../../../../models/message.model';
 import {DatePipe, NgClass} from '@angular/common';
 
 @Component({
