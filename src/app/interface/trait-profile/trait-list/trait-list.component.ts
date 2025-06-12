@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { TraitComponent} from '../trait/trait.component';
-import {Trait} from '../../../trait/trait.model';
-import {TraitService} from '../../../trait/trait.service';
+import {Trait} from '../../../models/trait.model';
+import {TraitService} from '../../../services/trait.service';
 
 @Component({
   selector: 'app-trait-list',

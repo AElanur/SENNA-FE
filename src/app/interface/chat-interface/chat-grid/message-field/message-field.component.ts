@@ -1,6 +1,6 @@
 import { Component, Output, EventEmitter } from '@angular/core';
 import { TextFieldModule } from '@angular/cdk/text-field';
-import { MessageService} from '../../../../message/message.service';
+import { MessageService} from '../../../../services/message.service';
 import { FormsModule } from '@angular/forms';
 import {ActivatedRoute} from '@angular/router';
 

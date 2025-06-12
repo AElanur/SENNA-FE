@@ -8,6 +8,8 @@ export const routeConfig: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'register', component: CreateUserProfileComponent },
   { path: 'user/:userID', component: InterfaceComponent },
+  { path: 'user/:userID/bot', component: CreateBotComponent },
+  { path: 'user/:userID/chat/:chatID', component: InterfaceComponent },
 ];
 
 export default routeConfig;

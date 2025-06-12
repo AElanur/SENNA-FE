@@ -1,8 +1,8 @@
 import {AfterViewChecked, Component, ElementRef, OnInit, ViewChild} from '@angular/core';
 import { MessageFieldComponent } from '../message-field/message-field.component';
 import { MessageBubbleComponent } from '../message-bubble/message-bubble.component';
-import { MessageService} from '../../../../message/message.service';
-import { Message } from '../../../../message/message.model';
+import { MessageService} from '../../../../services/message.service';
+import { Message } from '../../../../models/message.model';
 import {ActivatedRoute} from '@angular/router';
 
 @Component({
