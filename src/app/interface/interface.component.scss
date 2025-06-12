@@ -1,0 +1,42 @@
+.d-flex > app-chat-grid {
+  flex: 1 1 0;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+.interface-elements {
+  height: calc(100% - 40px);
+  width: calc(100% - 40px);
+  gap: 5px;
+}
+
+.chat-resilience-interface {
+  height: calc(100% - 40px);
+  width: calc(100% - 40px);
+}
+
+.interface {
+  padding: 20px;
+  height: 100vh;
+  background-color: #0a111b;
+
+
+
+  color: #D3DBED;
+}
+
+.chat-space {
+  flex: 0 0 80%;
+}
+
+.resilience-space {
+  flex: 0 0 20%;
+}
+

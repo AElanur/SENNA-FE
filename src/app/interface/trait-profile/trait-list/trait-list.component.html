@@ -1,0 +1,10 @@
+<main>
+  <div class="trait-title-card">
+    <p class="trait-title">Personality traits</p>
+  </div>
+  <div class="p-4 d-flex flex-row">
+    @for(trait of traits; track trait.trait_identifier) {
+    <app-trait [trait]="trait"/>
+    }
+  </div>
+</main>

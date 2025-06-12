@@ -1,0 +1,33 @@
+.trait-profile {
+  border-top-left-radius: 0.3rem;
+  border-bottom-left-radius: 0.3rem;
+  overflow: hidden;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: #10192a;
+}
+
+.user-traits {
+  height: 100%;
+  overflow-y: auto;
+  align-content: end;
+}
+
+.profile-button {
+  background: #D3DBED;
+  color: #10192a;
+  border: none;
+  border-radius: 6px;
+  padding: 0.75rem 1rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+
+  &:hover {
+    background: #b2bbcf;
+  }
+}
