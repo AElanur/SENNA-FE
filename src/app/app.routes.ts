@@ -5,8 +5,8 @@ import {CreateUserProfileComponent} from './interface/user/create-user-profile/c
 import {CreateBotComponent} from './interface/user/create-bot/create-bot.component';
 
 export const routeConfig: Routes = [
-  { path: 'login', component: CreateBotComponent },
-  { path: ':userID', component: InterfaceComponent },
+  { path: 'login', component: CreateUserProfileComponent },
+  { path: 'user/:userID', component: InterfaceComponent },
 ];
 
 export default routeConfig;

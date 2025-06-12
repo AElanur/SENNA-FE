@@ -3,6 +3,7 @@ import { MessageFieldComponent } from '../message-field/message-field.component'
 import { MessageBubbleComponent } from '../message-bubble/message-bubble.component';
 import { MessageService} from '../../../../message/message.service';
 import { Message } from '../../../../message/message.model';
+import {ActivatedRoute} from '@angular/router';
 
 @Component({
   selector: 'app-chat-field',
@@ -17,10 +18,13 @@ import { Message } from '../../../../message/message.model';
 export class ChatFieldComponent implements OnInit, AfterViewChecked {
   @ViewChild('messageList') private messageList!: ElementRef;
   messages: Message[] | null = null;
-  constructor(private messageService: MessageService) {}
+  constructor(
+    private messageService: MessageService,
+    private route: ActivatedRoute) {}
 
   ngOnInit() {
-    this.getMessages(1)
+    const userId = Number(this.route.snapshot.paramMap.get('userID'));
+    this.getMessages(userId)
   }
 
   ngAfterViewChecked() {
