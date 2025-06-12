@@ -1,3 +1,9 @@
+@if(response.status == "success") {
+  <div class="trait-message text-center">
+    The following trait was recognized: {{ response.identified_trait }}
+  </div>
+}
+
 <div class="message-box d-flex align-items-end rounded shadow-sm border w-75 p-2 m-auto">
   <textarea
     [(ngModel)]="messageContent"

@@ -13,6 +13,7 @@ import { FormsModule } from '@angular/forms';
   styleUrl: './message-field.component.scss',
 })
 export class MessageFieldComponent {
+  response: any = '';
   messageContent: string = '';
   chatId: number = 1;
   sending: boolean = false;
@@ -36,15 +37,18 @@ export class MessageFieldComponent {
     this.messageService.sendMessage(
       this.chatId, {
       chat_id: 1,
-      sender_id: 1,
+      user_id: 1,
       content: message,
       sender_type: "user"
     }).subscribe({
       next: (response) => {
+        this.response = response
         this.messageContent = '';
         this.sending = false;
-        console.log('Message sent:', response);
         if (response.status === 'success') {
+          setTimeout(() => {
+            this.response = '';
+          }, 5000);
           this.messageSent.emit();
         }
       },

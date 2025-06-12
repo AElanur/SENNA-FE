@@ -44,3 +44,32 @@ textarea[cdktextareaautosize] {
   background-color: #D3DBED;
 }
 
+.trait-message {
+  -webkit-animation: fadeEffect 1s;
+  animation: fadeEffect 5s;
+}
+
+@-webkit-keyframes fadeEffect {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes fadeEffect {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+
+}
+
