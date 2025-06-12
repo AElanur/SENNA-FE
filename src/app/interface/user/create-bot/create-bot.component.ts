@@ -34,7 +34,7 @@ export class CreateBotComponent {
         const botData = { userID, botName };
         this.chatRepository.createChat(botData).subscribe({
           next: (response) => {
-            this.route.navigate(['user', userID, 'bot', response]);
+            this.route.navigate(['user', userID, 'chat', response]);
           },
           error: (err) => {
             console.log(err)

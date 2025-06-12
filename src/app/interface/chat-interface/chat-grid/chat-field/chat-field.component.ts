@@ -23,8 +23,8 @@ export class ChatFieldComponent implements OnInit, AfterViewChecked {
     private route: ActivatedRoute) {}
 
   ngOnInit() {
-    const userId = Number(this.route.snapshot.paramMap.get('userID'));
-    this.getMessages(userId)
+    const chatId = Number(this.route.snapshot.paramMap.get('chatID'));
+    this.getMessages(chatId)
   }
 
   ngAfterViewChecked() {
@@ -50,6 +50,7 @@ export class ChatFieldComponent implements OnInit, AfterViewChecked {
   }
 
   onMessageSent(): void {
-    this.getMessages(1);
+    const chatId = Number(this.route.snapshot.paramMap.get('chatID'));
+    this.getMessages(chatId);
   }
 }

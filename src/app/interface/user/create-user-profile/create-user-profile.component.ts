@@ -43,7 +43,7 @@ export class CreateUserProfileComponent {
       const userData = { username, email, password };
       this.userService.createUser(userData).subscribe({
         next: (response) => {
-          this.route.navigate(['/user', response]);
+          this.route.navigate(['/user', response, 'bot']);
         },
         error: (err) => {
           console.log(err)
