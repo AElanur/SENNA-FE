@@ -15,4 +15,8 @@ export class ChatRepository {
     return this.http.post<Chat>(`${this.apiUrl}/chat`, bot_data)
   }
 
+  getChatParticipants(chat_id: number): Observable<Chat> {
+    return this.http.get<Chat>(`${this.apiUrl}/chat/${chat_id}participants`)
+  }
+
 }

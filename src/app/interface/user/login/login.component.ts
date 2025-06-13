@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 import {FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators} from '@angular/forms';
 import {UserService} from '../../../services/user.service';
 import {Router} from '@angular/router';
@@ -30,10 +30,9 @@ export class LoginComponent {
     if (this.loginForm.valid) {
       const { username, password } = this.loginForm.value;
       const loginData = { username, password };
-      this.userService.getUser(loginData).subscribe({
+      this.userService.loginUser(loginData).subscribe({
         next: (response) => {
-          const userId = response;
-          this.route.navigate(['/user', userId]);
+          this.route.navigate(['/user', response]);
         },
         error: (err) => {
           console.log(err)

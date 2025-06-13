@@ -22,7 +22,6 @@ export class TraitListComponent {
     this.traitService.getTraits(userId).subscribe({
       next: (traits: Trait[]) => {
         this.traits = traits;
-        console.log(this.traits)
       },
       error: (err) => {
         this.traits = [];
