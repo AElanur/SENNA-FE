@@ -4,13 +4,45 @@
   border: 2px black;
   height: 100%;
   width: 100%;
-  background-color: #10192a;
+  background-color: #121212;
   border-bottom-right-radius: 0.3rem;
   border-top-right-radius: 0.3rem;
+}
+.profile-header {
+  color: #f3e7d8;
 }
 
 .challenge-card {
   border-radius: 0.3rem;
   background-color: #D3DBED;
   color: black;
+}
+
+.add-challenge-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  margin-top: 1rem;
+  background: linear-gradient(90deg, #e0c3a3 0%, #b48c5e 100%);
+  color: #181512;
+  font-weight: 600;
+  font-size: 1.1rem;
+  border: none;
+  border-radius: 0.3rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+  cursor: pointer;
+  transition: background 0.2s, box-shadow 0.2s;
+
+  &:hover, &:focus {
+    background: linear-gradient(90deg, #f0d6b7 0%, #c9a06b 100%);
+    box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+    outline: none;
+  }
+}
+
+.plus-icon {
+  font-size: 1.4rem;
+  font-weight: bold;
+  line-height: 1;
 }

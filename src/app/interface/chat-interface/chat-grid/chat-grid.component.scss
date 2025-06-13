@@ -1,5 +1,5 @@
 .chat-grid {
-  background: #10192a;
+  background: #121212;
   width: 100%;
   overflow: hidden;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
@@ -11,20 +11,31 @@
 }
 
 .profile-field {
-  flex: 0 0 5%;
-  max-height: 5%;
+  flex: 0 0 auto;
 }
 
 .chat-field {
-  flex: 0 0 95%;
-  max-height: 85%;
+  flex: 1 1 auto;
   min-height: 0;
-  display: flex;
-  flex-direction: column;
+  min-width: 0;
+  overflow: hidden;
 }
 
 .chat-view {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
   border-radius: 0.3rem;
   overflow: hidden;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+  background: #121212;
+  justify-content: space-between;
+  min-height: 0;
+}
+
+
+.trait-list {
+  flex: 0 0 auto;
+  min-width: 0;
+  height: 150px;
 }
