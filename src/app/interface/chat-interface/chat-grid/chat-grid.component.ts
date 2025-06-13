@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { ChatFieldComponent } from './chat-field/chat-field.component';
 import { BotProfileFieldComponent } from './bot-profile-field/bot-profile-field.component';
+import {TraitListComponent} from './trait-list/trait-list.component';
 
 
 @Component({
@@ -9,7 +10,8 @@ import { BotProfileFieldComponent } from './bot-profile-field/bot-profile-field.
   styleUrls: ['./chat-grid.component.scss'],
   imports: [
     ChatFieldComponent,
-    BotProfileFieldComponent
+    BotProfileFieldComponent,
+    TraitListComponent
   ]
 })
 export class ChatGridComponent {

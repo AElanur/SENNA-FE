@@ -1,5 +1,5 @@
 .user-bubble, .bot-bubble {
-  color: #222;
+  color: #f3e7d8;
   padding: 0.5em 1em;
   margin: 0.5em 0;
   max-width: 75%;
@@ -7,23 +7,27 @@
   border-radius: 1.2em;
   word-break: break-word;
   font-size: 15px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+}
+
+.bot-bubble {
+  background: #181512;
+  align-self: flex-start;
+  width: fit-content;
+  border: 1px solid #2d1e14;
+}
+
+.user-bubble {
+  background: #2d1e14;
+  margin-left: auto;
+  align-self: flex-end;
+  text-align: left;
+  border: 1px solid #a67c52;
 }
 
 .bot-time, .user-time {
   font-size: 12px;
-}
-
-.bot-bubble {
-  background: #B9C2DB  ;
-  align-self: flex-start;
-  width: fit-content;
-}
-
-.user-bubble {
-  background: #D3DBED;
-  margin-left: auto;
-  align-self: flex-end;
-  text-align: left;
+  color: #a67c52;
 }
 
 .user-time {
@@ -31,4 +35,3 @@
   align-self: flex-end;
   text-align: left;
 }
-

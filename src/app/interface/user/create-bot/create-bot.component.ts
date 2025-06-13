@@ -1,18 +1,23 @@
-import {Component} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup, ReactiveFormsModule, Validators} from '@angular/forms';
 import {ChatRepository} from '../../../repository/chat.repository';
 import {ActivatedRoute, Router} from '@angular/router';
+import {ModalComponent} from '../../modal/modal.component';
+import {NgIf} from '@angular/common';
 
 @Component({
   selector: 'app-create-bot',
   templateUrl: './create-bot.component.html',
   imports: [
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    ModalComponent,
+    NgIf
   ],
   styleUrls: ['./create-bot.component.scss']
 })
-export class CreateBotComponent {
+export class CreateBotComponent implements OnInit {
   botForm: FormGroup;
+  showModal = true;
 
   constructor(
     private fb: FormBuilder,
@@ -41,5 +46,8 @@ export class CreateBotComponent {
           }
         });
     }
+  }
+
+  ngOnInit(): void {
   }
 }
