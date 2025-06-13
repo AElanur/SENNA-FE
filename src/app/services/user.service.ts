@@ -10,8 +10,12 @@ export class UserService {
 
   constructor(private userRepository: UserRepository) { }
 
-  getUser(userInfo: User): Observable<User> {
-    return this.userRepository.getUser(userInfo)
+  loginUser(userINfo: User): Observable<User> {
+    return this.userRepository.loginUser(userINfo)
+  }
+
+  getUser(userID: number): Observable<User> {
+    return this.userRepository.getUser(userID)
   }
 
   createUser(userInfo: User): Observable<User> {

@@ -11,8 +11,13 @@ export class UserRepository {
 
   constructor(private http: HttpClient) {}
 
-  getUser(userInfo: User): Observable<User> {
+  loginUser(userInfo: User): Observable<User> {
     return this.http.post<User>(`${this.apiUrl}/user/login`, userInfo)
+  }
+
+  getUser(userID: number): Observable<User> {
+    console.log("TRAALALALALALAL")
+    return this.http.get<User>(`${this.apiUrl}/user/${userID}`)
   }
 
   createUser(userInfo: User): Observable<User> {
