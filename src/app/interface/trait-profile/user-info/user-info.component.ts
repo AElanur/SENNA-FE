@@ -1,8 +1,7 @@
 import {Component, OnInit} from '@angular/core';
-import { UserService} from '../../../services/user.service';
 import {ActivatedRoute} from '@angular/router';
-import {Message} from '../../../models/message.model';
 import {User} from '../../../models/user.model';
+import {ChatService} from '../../../services/chat.service';
 
 @Component({
   selector: 'app-user-info',
@@ -12,23 +11,22 @@ import {User} from '../../../models/user.model';
   styleUrl: './user-info.component.scss'
 })
 export class UserInfoComponent implements OnInit {
-  user: User| null = null;
+  user = null;
   constructor(
-    private userService: UserService,
+    private chatService: ChatService,
     private router: ActivatedRoute) {
   }
 
   ngOnInit() {
-    const userId = Number(this.router.snapshot.paramMap.get('userID'));
-    console.log(userId)
-    this.getUsername(userId)
+    const chatID = Number(this.router.snapshot.paramMap.get('chatID'));
+    this.getUsername(chatID)
   }
 
-  getUsername(userId: number): void {
-    this.userService.getUser(userId).subscribe({
-      next: (user: User) => {
-        console.log(user)
-        this.user = user;
+  getUsername(chatID: number): void {
+    this.chatService.getChatParticipants(chatID).subscribe({
+      next: (response: any) => {
+        console.log(response.username)
+        this.user = response.username;
       },
       error: (err) => {
         console.error('Error fetching messages:', err);
