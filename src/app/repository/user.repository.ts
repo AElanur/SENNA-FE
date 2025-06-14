@@ -11,7 +11,7 @@ export class UserRepository {
 
   constructor(private http: HttpClient) {}
 
-  loginUser(userInfo: User): Observable<User> {
+  loginUser(userInfo: User): Observable<any> {
     return this.http.post<User>(`${this.apiUrl}/user/login`, userInfo)
   }
 

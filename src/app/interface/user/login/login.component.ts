@@ -32,7 +32,7 @@ export class LoginComponent {
       const loginData = { username, password };
       this.userService.loginUser(loginData).subscribe({
         next: (response) => {
-          this.route.navigate(['/user', response]);
+          this.route.navigate([`/user/${response.user_id}/chat/${response.chat_id}`]);
         },
         error: (err) => {
           console.log(err)

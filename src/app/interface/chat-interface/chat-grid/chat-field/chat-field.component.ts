@@ -1,4 +1,4 @@
-import {AfterViewChecked, Component, ElementRef, OnInit, ViewChild} from '@angular/core';
+import {AfterViewChecked, Component, ElementRef, EventEmitter, OnInit, Output, ViewChild} from '@angular/core';
 import { MessageFieldComponent } from '../message-field/message-field.component';
 import { MessageBubbleComponent } from '../message-bubble/message-bubble.component';
 import { MessageService} from '../../../../services/message.service';
@@ -17,6 +17,7 @@ import {ActivatedRoute} from '@angular/router';
 })
 export class ChatFieldComponent implements OnInit, AfterViewChecked {
   @ViewChild('messageList') private messageList!: ElementRef;
+  @Output() messageSent = new EventEmitter<void>();
   messages: Message[] | null = null;
   constructor(
     private messageService: MessageService,
@@ -52,5 +53,6 @@ export class ChatFieldComponent implements OnInit, AfterViewChecked {
   onMessageSent(): void {
     const chatId = Number(this.route.snapshot.paramMap.get('chatID'));
     this.getMessages(chatId);
+    this.messageSent.emit();
   }
 }

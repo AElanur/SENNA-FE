@@ -10,8 +10,8 @@ export class UserService {
 
   constructor(private userRepository: UserRepository) { }
 
-  loginUser(userINfo: User): Observable<User> {
-    return this.userRepository.loginUser(userINfo)
+  loginUser(userInfo: User): Observable<any> {
+    return this.userRepository.loginUser(userInfo)
   }
 
   getUser(userID: number): Observable<User> {

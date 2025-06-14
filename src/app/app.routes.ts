@@ -5,9 +5,9 @@ import {CreateUserProfileComponent} from './interface/user/create-user-profile/c
 import {CreateBotComponent} from './interface/user/create-bot/create-bot.component';
 
 export const routeConfig: Routes = [
+  { path: '', redirectTo: 'login', pathMatch: 'full' },
   { path: 'login', component: LoginComponent },
   { path: 'register', component: CreateUserProfileComponent },
-  { path: 'user/:userID', component: InterfaceComponent },
   { path: 'user/:userID/bot', component: CreateBotComponent },
   { path: 'user/:userID/chat/:chatID', component: InterfaceComponent },
 ];

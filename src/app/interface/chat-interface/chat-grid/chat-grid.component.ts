@@ -16,7 +16,9 @@ import {TraitListComponent} from './trait-list/trait-list.component';
 })
 export class ChatGridComponent {
   title = 'Chat Interface';
-  sendMessage() {
-    // Your send logic here
+  traitRefresh = 0;
+
+  onMessageSent() {
+    this.traitRefresh++;
   }
 }
