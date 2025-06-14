@@ -1,0 +1,38 @@
+<div class="profile-container">
+  <div class="logo">
+    <span class="logo-main">Senna</span><span class="logo-dot">.</span><span class="logo-ai">AI</span>
+  </div>
+  <form [formGroup]="profileForm" class="profile-form d-flex" (ngSubmit)="onSubmit()">
+    <h2 class="profile-title">Create Profile</h2>
+    <div class="form-group">
+      <label for="username">Username</label>
+      <input id="username" type="text" formControlName="username" required />
+    </div>
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input id="email" type="email" formControlName="email" required />
+    </div>
+    <div class="form-group">
+      <label for="password">Password</label>
+      <input id="password" type="password" formControlName="password" required />
+      <div class="error" *ngIf="profileForm.get('password')?.touched && profileForm.get('password')?.invalid">
+        Password is required (min 6 chars).
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="confirmPassword">Confirm Password</label>
+      <input id="confirmPassword" type="password" formControlName="confirmPassword" required />
+      <div class="error" *ngIf="profileForm.get('confirmPassword')?.touched && profileForm.get('confirmPassword')?.errors?.['required']">
+        Confirm Password is required.
+      </div>
+      <div class="error" *ngIf="profileForm.errors?.['passwordMismatch'] && profileForm.get('confirmPassword')?.touched">
+        Passwords must match.
+      </div>
+    </div>
+    <button type="submit" class="profile-button mt-3" [disabled]="profileForm.invalid">Create Profile</button>
+  </form>
+  <div class="login-link">
+    <span>Already have an account?</span>
+    <a routerLink="/login">Log in here</a>
+  </div>
+</div>

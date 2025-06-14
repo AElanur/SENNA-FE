@@ -1,0 +1,16 @@
+<main>
+  <div class="trait-title-card">
+    <p class="trait-title">Personality traits</p>
+  </div>
+  <div class="trait-list-container p-1">
+    @for(trait of traits; track trait.trait_identifier) {
+      <div>
+        @if(trait.trait_possession) {
+          <p class="trait-tag">
+            {{ trait.trait_identifier }}
+          </p>
+        }
+      </div>
+    }
+  </div>
+</main>

@@ -1,0 +1,14 @@
+<div class="bot-container">
+  <app-modal *ngIf="showModal" (closed)="showModal = false"></app-modal>
+  <div class="logo">
+    <span class="logo-main">Senna</span><span class="logo-dot">.</span><span class="logo-ai">AI</span>
+  </div>
+  <form [formGroup]="botForm" class="bot-form" (ngSubmit)="onSubmit()">
+    <h2 class="bot-title">Create Bot</h2>
+    <div class="form-group">
+      <label for="botName">Bot Name</label>
+      <input id="botName" type="text" formControlName="botName" required />
+    </div>
+    <button type="submit" class="bot-button" [disabled]="botForm.invalid">Create Bot</button>
+  </form>
+</div>

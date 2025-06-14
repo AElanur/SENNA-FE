@@ -1,0 +1,103 @@
+.bot-container {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #1a120b;
+  flex-direction: column;
+}
+
+.bot-form {
+  background: #2d1e14;
+  padding: 2rem 2.5rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.3);
+  color: #f3e7d8;
+  width: 100%;
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.bot-title {
+  text-align: center;
+  margin-bottom: 1rem;
+  color: #f3e7d8;
+  letter-spacing: 0.02em;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+
+  label {
+    color: #f3e7d8;
+    font-size: 1rem;
+    margin-bottom: 0.25rem;
+  }
+
+  input, textarea {
+    background: #1a120b;
+    border: 1px solid #bfa181;
+    border-radius: 6px;
+    padding: 0.75rem 1rem;
+    color: #f3e7d8;
+    font-size: 1rem;
+    outline: none;
+
+    &:focus {
+      border-color: #a67c52;
+      background: #2d1e14;
+    }
+  }
+}
+
+.bot-button {
+  background: #5a3e2b;
+  color: #f3e7d8;
+  border: none;
+  border-radius: 6px;
+  padding: 0.75rem 1rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+
+  &:hover {
+    background: #a67c52;
+  }
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Montserrat', 'Segoe UI', Arial, sans-serif;
+  font-size: 2.7rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  margin-bottom: 2rem;
+  user-select: none;
+}
+
+.logo-main {
+  color: #a67c52;
+}
+
+.logo-dot {
+  color: #8B0000;
+  font-size: 2.7rem;
+  margin: 0 0.07em;
+}
+
+.logo-ai {
+  color: #5a3e2b;
+  font-size: 1.6rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-left: 0.07em;
+}
+

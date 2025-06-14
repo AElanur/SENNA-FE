@@ -1,0 +1,11 @@
+<div class="chat-field">
+    <div class="messages p-2 px-4" #messageList>
+      @for (message of messages; track message.sender_type) {
+        <app-message-bubble [message]="message"></app-message-bubble>
+      }
+    </div>
+
+  <div class="message-field">
+    <app-message-field (messageSent)="onMessageSent()"></app-message-field>
+  </div>
+</div>

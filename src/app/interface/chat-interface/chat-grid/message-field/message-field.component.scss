@@ -1,0 +1,108 @@
+.chat-input-area {
+  position: relative;
+  width: 100%;
+}
+
+.message-box {
+  background-color: #2d1e14;
+}
+
+.message-button {
+  border: none;
+  background-color: #5a3e2b;
+  border-radius: 100%;
+  width: 2.5rem;
+  height: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-self: center;
+  margin: auto;
+  transition: background 0.2s ease-in-out;
+  cursor: pointer;
+}
+.message-button:active,
+.message-button:focus {
+  background-color: #a67c52;
+  outline: none;
+}
+
+.send-icon {
+  width: 1rem;
+  height: 1rem;
+  color: #f3e7d8;
+}
+
+.message-textarea {
+  background: transparent;
+  border: none;
+  outline: none;
+  resize: none;
+  min-height: 2.2rem;
+  max-height: 8rem;
+  width: 100%;
+  font-size: 1rem;
+  line-height: 1.5;
+  box-shadow: none;
+  color: #f3e7d8;
+  padding-top: 0.2rem;
+  padding-bottom: 0.2rem;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+textarea[cdktextareaautosize] {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  overflow-y: hidden !important;
+  resize: none !important;
+}
+
+.trait-message-container {
+  width: 100%;
+  text-align: center; /* Horizontally center inline content */
+}
+
+.trait-message-float {
+  position: absolute;
+  left: 50%;
+  bottom: 100%; /* Place above the message box */
+  transform: translateX(-50%) translateY(-0.75rem); /* Slight gap above */
+  z-index: 10;
+  background: linear-gradient(90deg, #3d2b1f 0%, #2d1e14 100%);
+  color: #e2c9a0;
+  border-radius: 0.5rem;
+  padding: 0.5rem 1.2rem;
+  font-weight: 600;
+  font-size: 0.98em;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  border: 1px solid #a67c52;
+  cursor: pointer;
+  white-space: nowrap;
+  margin: 0;
+  animation: fadeEffect 5s;
+  pointer-events: auto;
+}
+
+.user-warning {
+  color: #5a3e2b;
+  background: #f3e7d8;
+  border-radius: 4px;
+  padding: 0.5rem 1rem;
+  font-size: 0.95em;
+  margin: 0 auto 1rem auto;
+  width: 75%;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.07);
+  border: 1px solid #a67c52; /* subtle brown border for cohesion */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+@-webkit-keyframes fadeEffect {
+  0% { opacity: 0; }
+  50% { opacity: 1; }
+  100% { opacity: 0; }
+}
+@keyframes fadeEffect {
+  0% { opacity: 0; }
+  50% { opacity: 1; }
+  100% { opacity: 0; }
+}
