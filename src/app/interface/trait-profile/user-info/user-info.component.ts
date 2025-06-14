@@ -1,7 +1,8 @@
 import {Component, OnInit} from '@angular/core';
-import {ActivatedRoute} from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
 import {User} from '../../../models/user.model';
 import {ChatService} from '../../../services/chat.service';
+import {UserService} from '../../../services/user.service';
 
 @Component({
   selector: 'app-user-info',
@@ -14,7 +15,9 @@ export class UserInfoComponent implements OnInit {
   user = null;
   constructor(
     private chatService: ChatService,
-    private router: ActivatedRoute) {
+    private userService: UserService,
+    private router: ActivatedRoute,
+    private route: Router) {
   }
 
   ngOnInit() {
@@ -25,7 +28,6 @@ export class UserInfoComponent implements OnInit {
   getUsername(chatID: number): void {
     this.chatService.getChatParticipants(chatID).subscribe({
       next: (response: any) => {
-        console.log(response.username)
         this.user = response.username;
       },
       error: (err) => {
@@ -33,4 +35,18 @@ export class UserInfoComponent implements OnInit {
       }
     });
   }
+
+  logout() {
+    this.userService.logoutUser().subscribe({
+      next: () => {
+        localStorage.removeItem('session_key');
+        this.route.navigate(['/login']);
+      },
+      error: (err) => {
+        console.error('Logout error:', err);
+        this.route.navigate(['/login']);
+      }
+    });
+  }
+
 }
