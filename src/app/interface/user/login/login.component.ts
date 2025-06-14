@@ -32,6 +32,7 @@ export class LoginComponent {
       const loginData = { username, password };
       this.userService.loginUser(loginData).subscribe({
         next: (response) => {
+          localStorage.setItem('session_key', response.session_key)
           this.route.navigate([`/user/${response.user_id}/chat/${response.chat_id}`]);
         },
         error: (err) => {

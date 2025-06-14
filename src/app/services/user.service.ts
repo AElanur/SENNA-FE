@@ -7,15 +7,12 @@ import {User} from '../models/user.model';
   providedIn: 'root'
 })
 export class UserService {
+  private http: any;
 
   constructor(private userRepository: UserRepository) { }
 
   loginUser(userInfo: User): Observable<any> {
     return this.userRepository.loginUser(userInfo)
-  }
-
-  getUser(userID: number): Observable<User> {
-    return this.userRepository.getUser(userID)
   }
 
   createUser(userInfo: User): Observable<User> {

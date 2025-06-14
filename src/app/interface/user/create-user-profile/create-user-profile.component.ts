@@ -37,7 +37,6 @@ export class CreateUserProfileComponent {
   }
 
   onSubmit() {
-
     if (this.profileForm.valid) {
       const { username, email, password } = this.profileForm.value;
       const userData = { username, email, password };
