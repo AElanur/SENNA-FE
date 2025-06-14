@@ -19,7 +19,7 @@ export class UserService {
     return this.userRepository.logoutUser()
   }
 
-  createUser(userInfo: User): Observable<User> {
+  createUser(userInfo: User): Observable<any> {
     return this.userRepository.createUser(userInfo)
   }
 }

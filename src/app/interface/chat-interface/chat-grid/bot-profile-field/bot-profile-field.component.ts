@@ -4,9 +4,9 @@ import {ActivatedRoute} from '@angular/router';
 
 @Component({
   selector: 'app-bot-profile-field',
-  imports: [],
   templateUrl: './bot-profile-field.component.html',
-  styleUrl: './bot-profile-field.component.scss'
+  styleUrl: './bot-profile-field.component.scss',
+  standalone: true
 })
 export class BotProfileFieldComponent implements OnInit {
   bot = null;

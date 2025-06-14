@@ -8,6 +8,7 @@ import {TraitListComponent} from './trait-list/trait-list.component';
   selector: 'app-chat-grid',
   templateUrl: './chat-grid.component.html',
   styleUrls: ['./chat-grid.component.scss'],
+  standalone: true,
   imports: [
     ChatFieldComponent,
     BotProfileFieldComponent,

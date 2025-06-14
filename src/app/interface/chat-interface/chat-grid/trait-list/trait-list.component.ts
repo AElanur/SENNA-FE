@@ -5,10 +5,9 @@ import {ActivatedRoute} from '@angular/router';
 
 @Component({
   selector: 'app-trait-list',
-  imports: [
-
-  ],
+  imports: [],
   templateUrl: './trait-list.component.html',
+  standalone: true,
   styleUrl: './trait-list.component.scss'
 })
 export class TraitListComponent implements OnInit, OnChanges {

@@ -19,7 +19,7 @@ export class UserRepository {
     return this.http.post<User>(`${this.apiUrl}/user/logout`, {})
   }
 
-  createUser(userInfo: User): Observable<User> {
+  createUser(userInfo: User): Observable<any> {
     return this.http.post<User>(`${this.apiUrl}/user`, userInfo)
   }
 }

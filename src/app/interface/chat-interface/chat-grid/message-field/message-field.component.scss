@@ -4,12 +4,13 @@
 }
 
 .message-box {
-  background-color: #2d1e14;
+  border: 1px solid #bfa181;
+  background-color: #1a120b;
 }
 
 .message-button {
   border: none;
-  background-color: #5a3e2b;
+  background: #dc3545;
   border-radius: 100%;
   width: 2.5rem;
   height: 2.5rem;
@@ -23,7 +24,6 @@
 }
 .message-button:active,
 .message-button:focus {
-  background-color: #a67c52;
   outline: none;
 }
 

@@ -11,6 +11,7 @@ import { ResilienceProfileComponent } from './resilience-profile/resilience-prof
     ResilienceProfileComponent
   ],
   templateUrl: './interface.component.html',
+  standalone: true,
   styleUrl: './interface.component.scss'
 })
 export class InterfaceComponent {

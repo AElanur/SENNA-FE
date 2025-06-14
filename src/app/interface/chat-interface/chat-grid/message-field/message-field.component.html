@@ -7,7 +7,7 @@
     </div>
   }
 
-  <div class="message-box d-flex align-items-end rounded shadow-sm border w-75 p-2 m-auto">
+  <div class="message-box d-flex align-items-end rounded shadow-sm w-75 p-2 m-auto">
     <textarea
       [(ngModel)]="messageContent"
       cdkTextareaAutosize
@@ -20,7 +20,7 @@
     ></textarea>
     <button
       type="button"
-      class="message-button ms-2"
+      class="message-button btn-danger ms-2"
       (click)="sendMessage(messageContent)"
       [disabled]="!messageContent.trim() || sending">
       <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-send send-icon" viewBox="0 0 16 16">

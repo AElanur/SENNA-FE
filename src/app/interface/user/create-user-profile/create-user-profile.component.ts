@@ -43,7 +43,9 @@ export class CreateUserProfileComponent {
       const userData = { username, email, password };
       this.userService.createUser(userData).subscribe({
         next: (response) => {
-          this.route.navigate(['/user', response, 'bot']);
+          localStorage.setItem('session_key', response.session_key);
+          console.log(response);
+          this.route.navigate(['/user', response.user_id, 'bot']);
         },
         error: (err) => {
           console.log(err)

@@ -11,6 +11,10 @@ html, body {
   box-sizing: border-box;
 }
 
+.user-profile {
+  height: 100%;
+}
+
 .interface-elements {
   height: calc(100% - 40px);
   width: calc(100% - 40px);
@@ -29,7 +33,7 @@ html, body {
 .interface {
   padding: 20px;
   height: 100vh;
-  background-color: #0a0a0a;
+  background-color: #140d08;
   color: #D3DBED;
 }
 
