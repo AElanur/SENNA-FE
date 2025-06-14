@@ -1,7 +1,7 @@
 <div class="chat-grid">
   <div class="chat-view">
     <app-bot-profile-field class="profile-field"></app-bot-profile-field>
-    <app-chat-field class="chat-field"></app-chat-field>
+    <app-chat-field class="chat-field" (messageSent)="onMessageSent()"></app-chat-field>
   </div>
-    <app-trait-list class="trait-list pt-2"></app-trait-list>
+  <app-trait-list class="trait-list pt-2" [refreshTrigger]="traitRefresh"></app-trait-list>
 </div>

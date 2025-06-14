@@ -1,14 +1,15 @@
 import {Component} from '@angular/core';
 import {FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators} from '@angular/forms';
 import {UserService} from '../../../services/user.service';
-import {Router} from '@angular/router';
+import {Router, RouterLink} from '@angular/router';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   imports: [
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    RouterLink
   ],
   styleUrls: ['./login.component.scss']
 })
@@ -32,7 +33,8 @@ export class LoginComponent {
       const loginData = { username, password };
       this.userService.loginUser(loginData).subscribe({
         next: (response) => {
-          this.route.navigate(['/user', response]);
+          localStorage.setItem('session_key', response.session_key)
+          this.route.navigate([`/user/${response.user_id}/chat/${response.chat_id}`]);
         },
         error: (err) => {
           console.log(err)

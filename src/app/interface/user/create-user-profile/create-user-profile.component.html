@@ -1,6 +1,9 @@
 <div class="profile-container">
-  <h2 class="profile-title">Create Profile</h2>
+  <div class="logo">
+    <span class="logo-main">Senna</span><span class="logo-dot">.</span><span class="logo-ai">AI</span>
+  </div>
   <form [formGroup]="profileForm" class="profile-form d-flex" (ngSubmit)="onSubmit()">
+    <h2 class="profile-title">Create Profile</h2>
     <div class="form-group">
       <label for="username">Username</label>
       <input id="username" type="text" formControlName="username" required />
@@ -28,4 +31,8 @@
     </div>
     <button type="submit" class="profile-button mt-3" [disabled]="profileForm.invalid">Create Profile</button>
   </form>
+  <div class="login-link">
+    <span>Already have an account?</span>
+    <a routerLink="/login">Log in here</a>
+  </div>
 </div>

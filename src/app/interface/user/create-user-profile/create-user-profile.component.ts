@@ -2,7 +2,7 @@ import {Component} from '@angular/core';
 import {FormBuilder, FormGroup, ReactiveFormsModule, Validators} from '@angular/forms';
 import {UserService} from '../../../services/user.service';
 import {NgIf} from '@angular/common';
-import {Router} from '@angular/router';
+import {Router, RouterLink} from '@angular/router';
 
 
 @Component({
@@ -10,7 +10,8 @@ import {Router} from '@angular/router';
   templateUrl: './create-user-profile.component.html',
   imports: [
     ReactiveFormsModule,
-    NgIf
+    NgIf,
+    RouterLink
   ],
   styleUrls: ['./create-user-profile.component.scss']
 })
@@ -37,7 +38,6 @@ export class CreateUserProfileComponent {
   }
 
   onSubmit() {
-
     if (this.profileForm.valid) {
       const { username, email, password } = this.profileForm.value;
       const userData = { username, email, password };

@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import {Component, Input, OnChanges, OnInit, SimpleChanges} from '@angular/core';
 import {Trait} from '../../../../models/trait.model';
 import {TraitService} from '../../../../services/trait.service';
+import {ActivatedRoute} from '@angular/router';
 
 @Component({
   selector: 'app-trait-list',
@@ -10,12 +11,15 @@ import {TraitService} from '../../../../services/trait.service';
   templateUrl: './trait-list.component.html',
   styleUrl: './trait-list.component.scss'
 })
-export class TraitListComponent {
+export class TraitListComponent implements OnInit, OnChanges {
+  @Input() refreshTrigger: number = 0;
   traits: Trait[] | null = null;
-  constructor(private traitService: TraitService) {}
+  constructor(private traitService: TraitService,
+              private router: ActivatedRoute) {}
 
   ngOnInit() {
-    this.getTraits(1)
+    const userId = Number(this.router.snapshot.paramMap.get('userID'));
+    this.getTraits(userId)
   }
 
   getTraits(userId: number): void {
@@ -28,5 +32,12 @@ export class TraitListComponent {
         console.error('Error fetching traits: ', err)
       }
     })
+  }
+
+  ngOnChanges(changes: SimpleChanges) {
+    if (changes['refreshTrigger'] && !changes['refreshTrigger'].firstChange) {
+      const userId = Number(this.router.snapshot.paramMap.get('userID'));
+      this.getTraits(userId); // Refresh traits
+    }
   }
 }

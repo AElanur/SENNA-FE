@@ -1,4 +1,7 @@
 <div class="login-container">
+  <div class="logo">
+    <span class="logo-main">Senna</span><span class="logo-dot">.</span><span class="logo-ai">AI</span>
+  </div>
   <form [formGroup]="loginForm"  class="login-form" (ngSubmit)="onLogin()">
     <h2 class="login-title">Login</h2>
     <div class="form-group">
@@ -11,4 +14,8 @@
     </div>
     <button type="submit" class="login-button">Sign In</button>
   </form>
+  <div class="register-link">
+    <span>Don’t have an account?</span>
+    <a routerLink="/register">Create one here</a>
+  </div>
 </div>

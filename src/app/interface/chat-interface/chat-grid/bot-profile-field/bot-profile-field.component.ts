@@ -17,12 +17,14 @@ export class BotProfileFieldComponent implements OnInit {
 
   ngOnInit() {
     const chatID = Number(this.router.snapshot.paramMap.get('chatID'));
+    console.log(chatID)
     this.getBotName(chatID)
   }
 
   getBotName(chatID: number): void {
     this.chatService.getChatParticipants(chatID).subscribe({
       next: (bot: any) => {
+        console.log(bot)
         this.bot = bot.chatbot_name;
       },
       error: (err) => {

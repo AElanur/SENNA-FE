@@ -3,16 +3,16 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #1a120b; /* deep brown background */
+  background-color: #1a120b;
   flex-direction: column;
 }
 
 .bot-form {
-  background: #2d1e14; /* matches modal-content */
+  background: #2d1e14;
   padding: 2rem 2.5rem;
   border-radius: 12px;
   box-shadow: 0 2px 16px rgba(0,0,0,0.3);
-  color: #f3e7d8; /* warm off-white for text */
+  color: #f3e7d8;
   width: 100%;
   max-width: 400px;
   display: flex;
@@ -40,7 +40,7 @@
 
   input, textarea {
     background: #1a120b;
-    border: 1px solid #bfa181; /* muted brown border */
+    border: 1px solid #bfa181;
     border-radius: 6px;
     padding: 0.75rem 1rem;
     color: #f3e7d8;
@@ -48,14 +48,14 @@
     outline: none;
 
     &:focus {
-      border-color: #a67c52; /* lighter brown on focus */
+      border-color: #a67c52;
       background: #2d1e14;
     }
   }
 }
 
 .bot-button {
-  background: #5a3e2b; /* accent brown */
+  background: #5a3e2b;
   color: #f3e7d8;
   border: none;
   border-radius: 6px;
@@ -66,7 +66,7 @@
   transition: background 0.2s;
 
   &:hover {
-    background: #a67c52; /* lighter brown on hover */
+    background: #a67c52;
   }
 }
 
@@ -83,17 +83,17 @@
 }
 
 .logo-main {
-  color: #a67c52; /* warm, golden brown */
+  color: #a67c52;
 }
 
 .logo-dot {
-  color: #8B0000; /* muted dark red, or use #A62700 for more muted */
+  color: #8B0000;
   font-size: 2.7rem;
   margin: 0 0.07em;
 }
 
 .logo-ai {
-  color: #5a3e2b; /* accent brown */
+  color: #5a3e2b;
   font-size: 1.6rem;
   font-weight: 500;
   letter-spacing: 0.1em;
