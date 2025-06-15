@@ -24,6 +24,7 @@ export class TraitListComponent implements OnInit, OnChanges {
   getTraits(userId: number): void {
     this.traitService.getTraits(userId).subscribe({
       next: (traits: Trait[]) => {
+        console.log(traits)
         this.traits = traits;
       },
       error: (err) => {
@@ -36,7 +37,7 @@ export class TraitListComponent implements OnInit, OnChanges {
   ngOnChanges(changes: SimpleChanges) {
     if (changes['refreshTrigger'] && !changes['refreshTrigger'].firstChange) {
       const userId = Number(this.router.snapshot.paramMap.get('userID'));
-      this.getTraits(userId); // Refresh traits
+      this.getTraits(userId);
     }
   }
 }

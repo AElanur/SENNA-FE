@@ -11,6 +11,6 @@ export class TraitRepository {
   constructor(private http: HttpClient) {}
 
   getTraits(userId: number): Observable<Trait[]> {
-    return this.http.get<Trait[]>(`${this.apiUrl}/user/${userId}/traits`)
+    return this.http.get<Trait[]>(`${this.apiUrl}/user/traits`)
   }
 }
