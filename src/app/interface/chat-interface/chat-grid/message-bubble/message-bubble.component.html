@@ -1,10 +1,24 @@
 <div class="d-flex flex-column">
-  <div
-    [ngClass]="{'bot-bubble': isBot, 'user-bubble': !isBot}"
-    class="p-2 px-3">
-    {{ message.content }}
-  </div>
-  <div [ngClass]="{'bot-time': isBot, 'user-time': !isBot}">
-    {{ message.timestamp | date:'shortTime' }}
-  </div>
+  @for (message of messages; track message.id) {
+    <div
+      [ngClass]="{'bot-bubble': isBot(message), 'user-bubble': !isBot(message)}"
+      class="p-2 px-3">
+      {{ message.content }}
+    </div>
+    <div [ngClass]="{'bot-time': isBot(message), 'user-time': !isBot(message)}">
+      {{ message.timestamp | date:'shortTime' }}
+    </div>
+  }
+
+  @if(bubble) {
+    <div
+      [ngClass]="{'bot-bubble': loadingBubble === 'bot', 'user-bubble': loadingBubble === 'user', 'typing-bubble': true}"
+      class="p-2 px-3 d-inline-flex align-items-center"
+      style="min-width: 48px; min-height: 32px;"
+    >
+      <span class="typing-dots">
+        <span></span><span></span><span></span>
+      </span>
+    </div>
+  }
 </div>

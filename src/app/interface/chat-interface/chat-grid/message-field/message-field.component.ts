@@ -12,6 +12,7 @@ import {ActivatedRoute} from '@angular/router';
   ],
   templateUrl: './message-field.component.html',
   styleUrl: './message-field.component.scss',
+  standalone: true
 })
 export class MessageFieldComponent {
   response: any = '';
@@ -22,6 +23,7 @@ export class MessageFieldComponent {
     private messageService: MessageService,
     private route: ActivatedRoute) {}
   @Output() messageSent = new EventEmitter<void>();
+  @Output() loadingChange = new EventEmitter<boolean>();
 
   onTextareaKeydown(event: KeyboardEvent) {
     if (event.key === 'Enter' && !event.shiftKey && !event.ctrlKey) {
@@ -39,6 +41,7 @@ export class MessageFieldComponent {
       return;
     }
     this.sending = true;
+    this.loadingChange.emit(this.sending);
     this.messageService.sendMessage({
       chat_id: chatId,
       user_id: userId,
@@ -49,6 +52,7 @@ export class MessageFieldComponent {
         this.response = response
         this.messageContent = '';
         this.sending = false;
+        this.loadingChange.emit(this.sending);
         if (response.status === 'success') {
           setTimeout(() => {
             this.response = '';

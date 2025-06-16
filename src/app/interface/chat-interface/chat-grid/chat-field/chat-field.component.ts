@@ -19,6 +19,8 @@ export class ChatFieldComponent implements OnInit, AfterViewChecked {
   @ViewChild('messageList') private messageList!: ElementRef;
   @Output() messageSent = new EventEmitter<void>();
   messages: Message[] | null = null;
+  loadBubble: boolean = false;
+  isBot: string = 'bot';
   constructor(
     private messageService: MessageService,
     private route: ActivatedRoute) {}
@@ -54,5 +56,9 @@ export class ChatFieldComponent implements OnInit, AfterViewChecked {
     const chatId = Number(this.route.snapshot.paramMap.get('chatID'));
     this.getMessages(chatId);
     this.messageSent.emit();
+  }
+
+  onLoadingChange(isLoading: boolean) {
+    this.loadBubble = isLoading;
   }
 }
